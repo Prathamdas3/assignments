@@ -6,7 +6,19 @@
 */
 
 function countVowels(str) {
-    // Your code here
+  const data = str.toLowerCase().replace(' ', '').split('')
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  let totalVowels = 0
+  for (let d of data) {
+    for (let v of vowels) {
+      if (d === v) {
+        totalVowels++
+      }
+    }
+  }
+  return totalVowels
 }
 
-module.exports = countVowels;
+console.log(countVowels('Anirban tudu'))
+
+module.exports = countVowels
