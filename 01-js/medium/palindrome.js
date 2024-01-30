@@ -4,11 +4,17 @@
 */
 
 function isPalindrome(str) {
-  const data = str.toLowerCase().replace(' ', '').split('').reverse().join('')
-  if (data === str.toLowerCase()) return true
+  const data = str
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '') // Remove non-alphanumeric characters
+    .split('')
+    .reverse()
+    .join('')
+
+  if (data === str.toLowerCase().replace(/[^a-z0-9]/g, '')) return true
   return false
 }
 
-console.log(isPalindrome('master'))
+console.log(isPalindrome('A man a plan a canal Panama'))
 
 module.exports = isPalindrome

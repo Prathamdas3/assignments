@@ -5,8 +5,9 @@
 */
 
 function isAnagram(str1, str2) {
-  const data1 = str1.replace(' ', '').split('')
-  const data2 = str2.replace(' ', '').split('')
+  const data1 = str1.replace(' ', '').toLowerCase().split('')
+  const data2 = str2.replace(' ', '').toLowerCase().split('')
+  if (data1.length !== data2.length) return false
   for (let i = 0; i < data2.length; i++) {
     if (!data1.includes(data2[i])) {
       return false
@@ -15,6 +16,6 @@ function isAnagram(str1, str2) {
   return true
 }
 
-console.log(isAnagram('cinema', 'ice man'))
+console.log(isAnagram('openai', 'open'))
 
 module.exports = isAnagram
